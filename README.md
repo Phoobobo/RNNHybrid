@@ -17,23 +17,23 @@ startActivity(intent);
 思路1：
 首先看ReactActivity的onCreate方法：
 
-> ```
-> @Override
-  protected void onCreate(Bundle savedInstanceState) {
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     mDelegate.onCreate(savedInstanceState);
-  }
+}
 ```
 
 追踪到ReactActivityDelegate的loadApp方法，注意看
 
-> ```
-> mReactRootView = createRootView();
+```
+mReactRootView = createRootView();
     mReactRootView.startReactApplication(
       getReactNativeHost().getReactInstanceManager(),
       appKey,
       getLaunchOptions());
-> ```
+```
 
 我们接下来找getLaunchOptions方法开刀，
 
@@ -41,6 +41,7 @@ startActivity(intent);
 2 继承ReactActivity, 添加setLaunchOptions方法，并返回第一步中的实例
 
 思路2:通过ReactNavigation的deeplink实现，具体参见[https://reactnavigation.org/docs/deep-linking.html](https://reactnavigation.org/docs/deep-linking.html)
+
 ##### 2)RN页面跳转原生页面
 ##### 3)跳转过程中传递数据
 #### 3切换RN页面族/可插拔更换
