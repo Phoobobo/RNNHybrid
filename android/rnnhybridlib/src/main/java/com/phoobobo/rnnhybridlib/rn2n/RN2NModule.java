@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -33,6 +34,6 @@ public class RN2NModule extends ReactContextBaseJavaModule {
     }
 
     private Bundle parseReadableMapToBundle(ReadableMap options) {
-        return null;
+        return Arguments.toBundle(options);
     }
 }

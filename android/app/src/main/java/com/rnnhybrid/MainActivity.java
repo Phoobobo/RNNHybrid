@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this, MainReactActivity.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("initPage", "DetailPage");
+                Bundle bundle = new Bundle();
+                bundle.putString("extras", "hello rn");
 //                intent.putExtras(bundle);
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);

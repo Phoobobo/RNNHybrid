@@ -42,7 +42,17 @@ mReactRootView = createRootView();
 
 思路2:通过ReactNavigation的deeplink实现，具体参见[https://reactnavigation.org/docs/deep-linking.html](https://reactnavigation.org/docs/deep-linking.html)
 
+按照ReactNavigation的文档配置好Activity的IntentFilter属性，RN的页面配置好path，然后就可以用以下方法跳转到RN页面：
+
+```Java
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("rn://rn/home/detail"));
+startActivity(intent);
+```
+
 ##### 2)RN页面跳转原生页面
+设计原生模块，具体见[rnnhybridlib module中的rn2n模块](https://github.com/Phoobobo/RNNHybrid/blob/master/android/rnnhybridlib/src/main/java/com/phoobobo/rnnhybridlib/rn2n/RN2NModule.java)。
 ##### 3)跳转过程中传递数据
 #### 3切换RN页面族/可插拔更换
 ### 三、移植你的原生/RN项目到框架
