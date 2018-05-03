@@ -1,4 +1,4 @@
-项目地址：
+ios实现可参考：[https://github.com/AlanMoMo/GTravel_HyBird](https://github.com/AlanMoMo/GTravel_HyBird)
 ### 一、初始化项目
 ```react-native init RNNHybrid```
 ### 二、改造项目
